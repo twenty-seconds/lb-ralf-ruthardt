@@ -157,8 +157,9 @@ ul{margin:0 0 1em;padding-left:1.2em;}
 @media(min-width:620px){ .book-grid{grid-template-columns:repeat(3,1fr);} }
 @media(min-width:920px){ .book-grid{grid-template-columns:repeat(4,1fr);} }
 .book{display:flex;flex-direction:column;align-items:center;text-align:center;}
-.book img{width:100%;max-width:200px;border-radius:5px;box-shadow:var(--shadow-card);transition:transform .2s,box-shadow .2s;}
-.book:hover img{transform:translateY(-4px);box-shadow:var(--shadow-cover);}
+.book picture{display:flex;align-items:center;justify-content:center;width:100%;max-width:190px;aspect-ratio:2/3;background:#fff;border-radius:5px;box-shadow:var(--shadow-card);overflow:hidden;transition:transform .2s,box-shadow .2s;}
+.book img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:0;box-shadow:none;}
+.book:hover picture{transform:translateY(-4px);box-shadow:var(--shadow-cover);}
 .book .title{font-family:var(--font-head);font-weight:600;font-size:16px;margin-top:14px;color:var(--color-ink);}
 .book .meta{font-size:13px;color:var(--color-text-soft);margin-top:2px;}
 
