@@ -1,0 +1,6 @@
+# VORSCHAU auf GitHub Pages — bewusst nicht indexieren.
+# Skill 03 (Deploy) ersetzt diese Datei beim Live-Schalt auf der echten Domain.
+User-agent: *
+Disallow: /
+
+Sitemap: https://twenty-seconds.github.io/lb-ralf-ruthardt/sitemap.xml
