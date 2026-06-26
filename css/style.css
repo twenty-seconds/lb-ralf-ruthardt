@@ -363,3 +363,9 @@ body.article-page main{background:#fff;}
 .media-list a{font-family:var(--font-head);font-weight:600;font-size:18px;text-decoration:none;color:var(--color-ink);}
 .media-list a:hover{color:var(--color-primary-dark);}
 .media-list .src{display:block;font-size:13px;color:var(--color-text-soft);margin-bottom:3px;}
+
+/* Buchseite: spanische Ausgabe am Ende des Produkttextes */
+.buch-spanisch{display:flex;gap:20px;align-items:center;margin:32px 0 0;padding-top:24px;border-top:1px solid var(--color-line);}
+.buch-spanisch img{width:96px;height:auto;border-radius:3px;box-shadow:var(--shadow-card);flex:0 0 auto;}
+.buch-spanisch .es-tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--color-primary-dark);margin:0 0 6px;}
+.buch-spanisch p{margin:0;font-size:15px;color:var(--color-text-soft);}
