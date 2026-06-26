@@ -335,3 +335,31 @@ body.article-page main{background:#fff;}
 .buch-quote{margin:28px 0 0;padding:18px 22px;border-left:4px solid var(--color-primary);background:var(--color-bg-alt);font-family:var(--font-head);font-style:italic;color:#333;}
 .buch-quote .cite{display:block;font-style:normal;font-size:14px;color:var(--color-text-soft);margin-top:8px;}
 @media(min-width:820px){ .buch-hero{grid-template-columns:300px 1fr;gap:48px;} .buch-hero .cover-wrap{justify-self:start;} }
+
+/* ============================================================
+   Buchseiten: Shop-Buttons + Stimmen + Magazin-Block
+   ============================================================ */
+.buch-shops{display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 0;}
+.buch-shops .btn{padding:12px 22px;font-size:15px;}
+.buch-stimmen{max-width:var(--read-width);margin:44px auto 0;}
+.buch-stimmen h2{font-size:22px;margin-bottom:18px;}
+.buch-stimmen .quote{background:var(--color-bg-alt);border-radius:10px;padding:20px 24px;margin-bottom:16px;}
+.buch-stimmen blockquote{margin:0 0 8px;font-family:var(--font-head);font-style:italic;font-size:18px;line-height:1.45;color:var(--color-ink);}
+.buch-stimmen .cite{font-size:14px;color:var(--color-text-soft);}
+.buch-stimmen .cite strong{color:var(--color-text);}
+
+/* Magazin-mitmenschenreden-Block (Startseite) */
+.mmr-grid{display:grid;grid-template-columns:1fr;gap:32px;align-items:center;}
+.mmr-actions{display:flex;flex-wrap:wrap;gap:14px;margin:24px 0 8px;}
+.mmr-pdfs{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px;}
+.mmr-pdfs a{color:#fff;font-size:14px;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4);padding-bottom:2px;}
+.mmr-pdfs a:hover{border-bottom-color:var(--color-primary);color:var(--color-primary);}
+@media(min-width:820px){ .mmr-grid{grid-template-columns:1fr;} }
+
+/* Presse: Medien & Interviews */
+.media-list{list-style:none;padding:0;margin:16px 0 0;}
+.media-list li{padding:14px 0;border-bottom:1px solid var(--color-line);}
+.media-list li:last-child{border-bottom:0;}
+.media-list a{font-family:var(--font-head);font-weight:600;font-size:18px;text-decoration:none;color:var(--color-ink);}
+.media-list a:hover{color:var(--color-primary-dark);}
+.media-list .src{display:block;font-size:13px;color:var(--color-text-soft);margin-bottom:3px;}
