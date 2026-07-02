@@ -95,6 +95,7 @@ ul{margin:0 0 1em;padding-left:1.2em;}
 .desktop-nav a:hover{color:var(--color-primary-dark);}
 .desktop-nav .btn{padding:10px 20px;}
 .desktop-nav a.btn--primary,.desktop-nav a.btn--primary:hover{color:#fff;}
+.desktop-nav a.btn--primary{height:52px;padding-top:0;padding-bottom:0;}
 @media(min-width:880px){ .desktop-nav{display:block;} }
 
 /* ---------- Hamburger (Pflicht-Snippet) ---------- */
