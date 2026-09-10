@@ -1,0 +1,21 @@
+name: Diagnose ruthardt.de webroot
+
+on:
+  workflow_dispatch:
+
+jobs:
+  find-webroot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Typische Webroot-Pfade gezielt prüfen
+        run: |
+          found=""
+          for path in /magazin.html /ruthardt.de/magazin.html /www.ruthardt.de/magazin.html /ralf-ruthardt.de/magazin.html /html/magazin.html; do
+            if curl --ftp-ssl --user "${{ secrets.FTP_USER }}:${{ secrets.FTP_PASS }}" \
+              "ftp://${{ secrets.FTP_HOST }}${path}" --silent --show-error 2>/dev/null \
+              | grep -Fq "Das laute Schweigen: Wenn die Meinung verstummt"; then
+              echo "WEBROOT_MATCH=${path%/magazin.html}/"
+              found="yes"
+            fi
+          done
+          test -n "$found"
