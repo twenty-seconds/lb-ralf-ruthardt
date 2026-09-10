@@ -1,9 +1,9 @@
 # Kontext Kunde — Ralf M. Ruthardt
 
 - **Kunde:** Ralf M. Ruthardt
-- **Website:** https://twenty-seconds.github.io/lb-ralf-ruthardt/
+- **Website:** https://ruthardt.de/
 - **Repository:** `twenty-seconds/lb-ralf-ruthardt`
-- **Bereitstellung:** GitHub Pages, Branch `main`, Repository-Wurzel
+- **Bereitstellung:** FTP-Deploy via GitHub Actions nach `/ruthardt.de/`; GitHub Pages dient zusätzlich als Vorschau.
 - **Magazinübersicht:** `magazin.html`
 - **Magazinartikel:** `magazin/*.html`
 

@@ -1,0 +1,35 @@
+name: Deploy ruthardt.de via FTP
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Nur die freigegebenen Magazin-Dateien vorbereiten
+        shell: bash
+        run: |
+          mkdir -p deploy/magazin/bilder
+          cp magazin.html deploy/magazin.html
+          cp magazin/vorlesen-bei-demenz.html deploy/magazin/vorlesen-bei-demenz.html
+          cp magazin/lautes-schweigen.html deploy/magazin/lautes-schweigen.html
+          cp magazin/bilder/vorlesen-bei-demenz-cover-v2.png deploy/magazin/bilder/
+          cp magazin/bilder/lautes-schweigen-cover-v2.png deploy/magazin/bilder/
+          cp magazin/bilder/vorlesen-bei-demenz-cover.webp deploy/magazin/bilder/
+          cp magazin/bilder/lautes-schweigen-cover.webp deploy/magazin/bilder/
+
+      - name: Begrenzter FTP-Deploy der Magazin-Dateien
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASS }}
+          local-dir: ./deploy/
+          server-dir: /ruthardt.de/
+          dangerous-clean-slate: false

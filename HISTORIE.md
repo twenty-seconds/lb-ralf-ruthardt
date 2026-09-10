@@ -1,5 +1,14 @@
 # Historie
 
+## 2026-09-10 — Produktions-Deploy für ruthardt.de eingerichtet (Skill 03)
+
+- **Ausgeführt von:** Ela Plaisier (@Ela-Plaisier, mp@twentyseconds.de)
+- **Änderungswunsch:** Die beiden freigegebenen Magazinartikel mit korrekten Titelbildern an Position 1 und 2 auf `https://ruthardt.de/magazin.html` veröffentlichen.
+- **GitHub-Repo:** https://github.com/twenty-seconds/lb-ralf-ruthardt
+- **Live-URL:** https://ruthardt.de/magazin.html
+- **FTP-Ziel:** `/ruthardt.de/`
+- **Besonderheit:** Das Repository hatte zuvor nur GitHub Pages und keinen Produktions-Deploy für die Kundendomain.
+
 ## 2026-09-10 — Alte Bilddateien der Artikel 5 und 7 überschrieben (Skill 50, Modus A)
 
 - **Ausgeführt von:** Ela Plaisier (@Ela-Plaisier, mp@twentyseconds.de)
