@@ -1,5 +1,12 @@
 # Historie
 
+## 2026-09-10 — Artikel auf heutiges Datum gesetzt und hervorgehoben (Skill 50, Modus A)
+
+- **Ausgeführt von:** Ela Plaisier (@Ela-Plaisier, mp@twentyseconds.de)
+- **Änderungswunsch:** Beide korrigierten Artikel mit heutigem Datum versehen und in der Magazinübersicht ganz nach oben stellen.
+- **Geänderte Dateien:** `magazin.html`, beide Artikelseiten und `sitemap.xml`.
+- **Ergebnis:** Artikel stehen auf Position 1 und 2; sichtbares Datum und strukturierte Daten lauten auf den 10. September 2026.
+
 ## 2026-09-10 — Titelbilder der korrigierten Magazinartikel ersetzt (Skill 50, Modus A)
 
 - **Ausgeführt von:** Ela Plaisier (@Ela-Plaisier, mp@twentyseconds.de)
