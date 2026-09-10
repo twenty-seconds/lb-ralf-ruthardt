@@ -1,5 +1,11 @@
 # Historie
 
+## 2026-09-10 — Produktions-Deploy gestoppt: abweichendes Hosting festgestellt
+
+- **Prüfergebnis:** `ruthardt.de/magazin.html` wird nicht aus dem zentralen Lead-Butler-FTP-Webspace ausgeliefert.
+- **Maßnahme:** Der provisorische Deploy- und Diagnose-Workflow wurde wieder aus dem Repository entfernt.
+- **Offen:** Für die Veröffentlichung auf der Kundendomain wird der konkrete FTP-/Hosting-Zugang oder der dokumentierte Webroot der bestehenden `ruthardt.de`-Installation benötigt.
+
 ## 2026-09-10 — Produktions-Deploy für ruthardt.de eingerichtet (Skill 03)
 
 - **Ausgeführt von:** Ela Plaisier (@Ela-Plaisier, mp@twentyseconds.de)

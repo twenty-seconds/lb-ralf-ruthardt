@@ -3,7 +3,7 @@
 - **Kunde:** Ralf M. Ruthardt
 - **Website:** https://ruthardt.de/
 - **Repository:** `twenty-seconds/lb-ralf-ruthardt`
-- **Bereitstellung:** FTP-Deploy via GitHub Actions nach `/ruthardt.de/`; GitHub Pages dient zusätzlich als Vorschau.
+- **Bereitstellung:** GitHub Pages dient als Vorschau. Der Produktions-Webroot von `ruthardt.de` liegt nicht auf dem zentralen Lead-Butler-FTP-Zugang und muss noch mit dem Hosting-Zugang der bestehenden Website verbunden werden.
 - **Magazinübersicht:** `magazin.html`
 - **Magazinartikel:** `magazin/*.html`
 
