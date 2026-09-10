@@ -1,5 +1,12 @@
 # Historie
 
+## 2026-09-10 — Alte Bilddateien der Artikel 5 und 7 überschrieben (Skill 50, Modus A)
+
+- **Ausgeführt von:** Ela Plaisier (@Ela-Plaisier, mp@twentyseconds.de)
+- **Änderungswunsch:** Auch über die bisherigen, im Browser gespeicherten Artikelkarten müssen die korrigierten Titelbilder erscheinen.
+- **Geänderte Dateien:** `magazin/bilder/lautes-schweigen-cover.webp` und `magazin/bilder/vorlesen-bei-demenz-cover.webp`.
+- **Ergebnis:** Die alten Bild-URLs liefern nun ebenfalls die korrigierten Titelbilder; damit verschwinden die falschen eingebrannten Überschriften auch aus älteren Seitenständen.
+
 ## 2026-09-10 — Artikel auf heutiges Datum gesetzt und hervorgehoben (Skill 50, Modus A)
 
 - **Ausgeführt von:** Ela Plaisier (@Ela-Plaisier, mp@twentyseconds.de)
