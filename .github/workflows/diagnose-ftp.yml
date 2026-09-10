@@ -8,14 +8,54 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Typische Webroot-Pfade gezielt prüfen
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          FTP_PASS: ${{ secrets.FTP_PASS }}
         run: |
-          found=""
-          for path in /magazin.html /ruthardt.de/magazin.html /www.ruthardt.de/magazin.html /ralf-ruthardt.de/magazin.html /html/magazin.html; do
-            if curl --ftp-ssl --user "${{ secrets.FTP_USER }}:${{ secrets.FTP_PASS }}" \
-              "ftp://${{ secrets.FTP_HOST }}${path}" --silent --show-error 2>/dev/null \
-              | grep -Fq "Das laute Schweigen: Wenn die Meinung verstummt"; then
-              echo "WEBROOT_MATCH=${path%/magazin.html}/"
-              found="yes"
-            fi
-          done
-          test -n "$found"
+          python - <<'PY'
+          import ftplib, io, os
+
+          ftp = ftplib.FTP_TLS(os.environ['FTP_HOST'])
+          ftp.login(os.environ['FTP_USER'], os.environ['FTP_PASS'])
+          ftp.prot_p()
+          marker = b'Das laute Schweigen: Wenn die Meinung verstummt'
+          matches = []
+
+          def walk(path, depth=0):
+              if depth > 4:
+                  return
+              try:
+                  names = ftp.nlst(path)
+              except ftplib.all_errors:
+                  return
+              for name in names:
+                  base = name.rstrip('/').rsplit('/', 1)[-1]
+                  if base in ('.', '..', '.git', 'node_modules'):
+                      continue
+                  if base == 'magazin.html':
+                      data = io.BytesIO()
+                      try:
+                          ftp.retrbinary('RETR ' + name, data.write)
+                          if marker in data.getvalue():
+                              matches.append(name.rsplit('/', 1)[0] + '/')
+                      except ftplib.all_errors:
+                          pass
+                      continue
+                  current = ftp.pwd()
+                  try:
+                      ftp.cwd(name)
+                      ftp.cwd(current)
+                      walk(name, depth + 1)
+                  except ftplib.all_errors:
+                      try:
+                          ftp.cwd(current)
+                      except ftplib.all_errors:
+                          pass
+
+          walk('/')
+          for match in matches:
+              print('WEBROOT_MATCH=' + match)
+          ftp.quit()
+          raise SystemExit(0 if matches else 1)
+          PY
