@@ -22,38 +22,22 @@ jobs:
           marker = b'Das laute Schweigen: Wenn die Meinung verstummt'
           matches = []
 
-          def walk(path, depth=0):
-              if depth > 4:
-                  return
-              try:
-                  names = ftp.nlst(path)
-              except ftplib.all_errors:
-                  return
-              for name in names:
-                  base = name.rstrip('/').rsplit('/', 1)[-1]
-                  if base in ('.', '..', '.git', 'node_modules'):
-                      continue
-                  if base == 'magazin.html':
-                      data = io.BytesIO()
-                      try:
-                          ftp.retrbinary('RETR ' + name, data.write)
-                          if marker in data.getvalue():
-                              matches.append(name.rsplit('/', 1)[0] + '/')
-                      except ftplib.all_errors:
-                          pass
-                      continue
-                  current = ftp.pwd()
-                  try:
-                      ftp.cwd(name)
-                      ftp.cwd(current)
-                      walk(name, depth + 1)
-                  except ftplib.all_errors:
-                      try:
-                          ftp.cwd(current)
-                      except ftplib.all_errors:
-                          pass
+          candidates = ['/magazin.html']
+          try:
+              for name, facts in ftp.mlsd('/'):
+                  if facts.get('type') == 'dir' and name not in ('.', '..'):
+                      candidates.append('/' + name.strip('/') + '/magazin.html')
+          except ftplib.all_errors:
+              pass
 
-          walk('/')
+          for candidate in candidates:
+              data = io.BytesIO()
+              try:
+                  ftp.retrbinary('RETR ' + candidate, data.write)
+                  if marker in data.getvalue():
+                      matches.append(candidate.rsplit('/', 1)[0] + '/')
+              except ftplib.all_errors:
+                  pass
           for match in matches:
               print('WEBROOT_MATCH=' + match)
           ftp.quit()
