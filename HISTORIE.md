@@ -1,5 +1,12 @@
 # Historie
 
+## 2026-09-10 — Titelbilder der korrigierten Magazinartikel ersetzt (Skill 50, Modus A)
+
+- **Ausgeführt von:** Ela Plaisier (@Ela-Plaisier, mp@twentyseconds.de)
+- **Änderungswunsch:** Die fest eingebrannten alten Überschriften auf beiden Artikelbildern durch die korrekten neuen Titel ersetzen.
+- **Geänderte Dateien:** Zwei neue Titelbilder sowie Bildverweise in `magazin.html`, `magazin/vorlesen-bei-demenz.html` und `magazin/lautes-schweigen.html`.
+- **Prüfung:** Wortlaut, Abmessungen (1200 × 630 Pixel), Darstellung und Social-Metadaten geprüft.
+
 ## 2026-09-10 — Zwei Magazinartikel korrigiert (Skill 50, Modus A)
 
 - **Ausgeführt von:** Ela Plaisier (@Ela-Plaisier, mp@twentyseconds.de)
